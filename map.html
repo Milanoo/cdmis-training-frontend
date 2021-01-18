@@ -49,7 +49,7 @@ chart.draw(data, options);
   <div id='map' style='width: 900px; height: 400px;'></div>
   <div id="chart_div"></div>
   <script>
-    var map, mapJSON, statisticsJson, institutionJson;
+    var map, mapJSON, statisticsJson, institutionJson, originalStatisticsJson; //global variable
     var popup = new mapboxgl.Popup({
       closeButton: false,
       closeOnClick: false
@@ -60,23 +60,27 @@ chart.draw(data, options);
       mapboxgl.accessToken = 'pk.eyJ1IjoiYmFuc2FqdGVzdCIsImEiOiJja2sxenFnbHMwd2I5MzBuMjhqdGJxd3N6In0.dKEbWvhOsadDSfeYUnievg';
       map = new mapboxgl.Map({
         container: 'map',
-        // style: 'mapbox://styles/mapbox/streets-v11',
+        // style: 'mapbox://styles/mapbox/streets-v11', //Change styles
         style: 'mapbox://styles/bansajtest/ckk20h14m1j7417mzf0os2jq4',
         center: [83.9158264002, 28.2489136496],
         zoom: 5.8,
       });
     }
 
-    $.getJSON("http://localhost:8888/cdmis-training/api/read.php", function(json) {
-      statisticsJson = json.results;
-      let butwalStatistics = [];
-      for (let i = 0; i < statisticsJson.length; i++) {
-          if (statisticsJson[i].municipality_id == 136) {
-            butwalStatistics.push(statisticsJson[i]);
+    $.getJSON("http://localhost/cdmis-training/api/read.php", function(json) {
+      var localStatisticsJson = json.results; //local variable
+      
+      var butwalStatistics = [];
+      for (let i = 0; i < localStatisticsJson.length; i++) {
+          if (localStatisticsJson[i].municipality_id == 136) {
+            butwalStatistics.push(localStatisticsJson[i]);
           }
       }
+      statisticsJson = butwalStatistics;
+      originalStatisticsJson = originalStatisticsJson
     });
-    $.getJSON("http://localhost:8888/cdmis-training/api/read_institution.php", function(json) {
+  
+    $.getJSON("http://localhost/cdmis-training/api/read_institution.php", function(json) {
       institutionJson = json;
     });
 
@@ -108,7 +112,6 @@ chart.draw(data, options);
     function showPopup(e) {
     // Updates the cursor to a hand (interactivity)
     map.getCanvas().style.cursor = 'pointer';
-      console.log(e.features[0].geometry.coordinates[0][0]);
     // Show the popup at the coordinates with some data
     popup.setLngLat(e.features[0].geometry.coordinates[0][0])
       .setHTML(checkEmpty(e.features[0].properties.title_en))
