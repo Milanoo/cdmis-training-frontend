@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+div {
+  width: 300px;
+  height: 100px;
+  background-color: yellow;
+  border: 1px solid black;
+}
+
+div#rotate {
+  -ms-transform: rotate(20deg); /* IE 9 */
+  transform: rotate(20deg); /* Standard syntax */
+}
+div#translate {
+  width: 300px;
+  height: 100px;
+  background-color: yellow;
+  border: 1px solid black;
+  -ms-transform: translate(50px,100px); /* IE 9 */
+  transform: translate(50px,100px); /* Standard syntax */
+}
+div#scale {
+  margin: 150px;
+  width: 300px;
+  height: 100px;
+  background-color: yellow;
+  border: 1px solid black;
+  -ms-transform: scale(0.5,0.5); /* IE 9 */
+  transform: scale(0.5,0.5); /* Standard syntax */
+}
+</style>
+</head>
+<body>
+
+<h1>The rotate() Method</h1>
+<p>The rotate() method rotates an element clockwise or counter-clockwise.</p>
+
+<div>
+This a normal div element.
+</div>
+
+<div id="rotate">
+This div element is rotated clockwise 20 degrees.
+</div>
+
+<div id="translate">
+  This div element is moved 50 pixels to the right, and 100 pixels down from its current position.
+</div>
+
+<div id="scale">
+  This div element is decreased to be half of its original width and height.
+</div>
+
+</body>
+</html>
