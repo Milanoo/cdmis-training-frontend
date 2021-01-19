@@ -1,0 +1,90 @@
+* {
+  margin: 0;
+  font-family: Helvetica, sans-serif;
+}
+
+body {
+  background-color: #f6f6f6;
+  /* padding: 0px 20px; */
+}
+
+h2 {
+  margin-bottom: 10px;
+}
+
+section {
+  padding: 10px;
+}
+
+#header {
+  /* height: 200px; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+}
+
+#header .logo-text-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#header #navigation-bar {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+#header .nav-link {
+  color: rgba(0, 0, 0, 0.5);
+  text-decoration: none;
+  padding: 15px
+  /* text-decoration: underline; */
+}
+
+#header .nav-link:hover {
+  color: rgba(0, 0, 0);
+}
+
+#main-body {
+  margin-top: 20px
+}
+
+#main-body #map {
+  height: 500px;
+  border: 1px solid rgba(0,0,0,.16);
+}
+
+#statistics {
+  margin-top: 50px;
+}
+
+.card-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: flex-start;
+}
+
+.card-wrapper .card {
+  width: 200px;
+  background-color: white;
+  border-radius: 2px;
+  height: 80px;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  margin-top: 20px
+}
+
+.graph {
+   min-height: 100px;
+}
+
+#footer {
+  padding: 10px;
+  margin-top: 50px;
+  height: 400px;
+  background-color: #2572bc;
+  color: white;
+}
