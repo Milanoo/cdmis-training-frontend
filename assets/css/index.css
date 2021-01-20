@@ -74,7 +74,13 @@ section {
   border-radius: 2px;
   height: 80px;
   border: 1px solid rgba(0, 0, 0, 0.5);
-  margin-top: 20px
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 }
 
 .graph {

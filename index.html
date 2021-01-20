@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CDMIS</title>
   <link rel="stylesheet" href="./assets/css/index.css"></link>
+  <link rel="stylesheet" href="./assets/css/map.css"></link>
 </head>
 <body>
   <section id="header">
@@ -24,29 +25,34 @@
     
     <div id="map-section">
       <h2>Map</h2>
-      <div id="map">
-
-      </div>
+      <div id="map"></div>
+      <button onclick="removeInstitutionMarkers()">
+        Remove Markers
+      </button>
+      <button onclick="loadInstitutionMarkers()">
+        Show Markers
+      </button>
     </div>
     <div id="statistics">
       <h2>Statistics</h2>
       
       <div class="card-wrapper">
         <div class="card">
-          <!-- <div></div> -->
+          <h4>Household</h4>
+          <p id="household"></p>
         </div>
         <div class="card">
-          
+          <h4>Male</h4>
+          <p id="male_population"></p>
         </div>
         <div class="card">
-          
-        </div>
-        <div class="card">
-          
+          <h4>Female</h4>
+          <p id="female_population"></p>
         </div>
       </div>
       <div class="graph">
         <h2>Graph</h2>
+        <div id="chart"></div>
       </div>
     </div>
     
@@ -56,4 +62,16 @@
 
   </section>
 </body>
+
+<script src='https://api.mapbox.com/mapbox-gl-js/v2.0.0/mapbox-gl.js'></script>
+<link href='https://api.mapbox.com/mapbox-gl-js/v2.0.0/mapbox-gl.css' rel='stylesheet' /> 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<!--Load the AJAX API-->
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script>
+  var map, mapJSON, statisticsJson, institutionJson, totalStatisticsJson = {population: 0, male_population: 0, female_population: 0, household: 0}, activeStatisticsJson, apiBaseUrl = 'http://localhost:8888/cdmis-training/api', activeMarkers=[]; //global variable
+</script>
+<script src="./assets/js/map.js"></script>
+<!-- <script src="./assets/js/chart.js"></script> -->
 </html>

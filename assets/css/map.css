@@ -1,0 +1,31 @@
+.marker_goverment_instituion {
+  background-image: url('../images/institution.svg');
+  background-size: cover;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+}
+
+.marker_temple {
+  background-image: url('../images/temple.svg');
+  background-size: cover;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+}
+
+.marker_bank {
+  background-image: url('../images/bank.svg');
+  background-size: cover;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+}
+
+.marker_school {
+  background-image: url('../images/school.svg');
+  background-size: cover;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+}
