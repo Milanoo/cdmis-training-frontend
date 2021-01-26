@@ -73,7 +73,16 @@ function loadGhoraiGeoJson() {
         'line-color': 'red',
         'line-width': 2
       }
-      });
+    });
+    map.addLayer({
+      'id': 'ward-title',
+      'type': 'symbol',
+      'source': 'ghorai',
+      'layout': {
+        'text-field': '{title_en}',
+        'text-size': 12
+      }
+    });
   });
 }
 
